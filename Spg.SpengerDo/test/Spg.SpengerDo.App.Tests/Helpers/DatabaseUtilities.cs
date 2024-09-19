@@ -54,40 +54,54 @@ namespace Spg.SpengerDo.App.Tests.Helpers
                     "Reinsch",
                     "hans@reinsch.at"
                 )
-                    .AddToDoItem(new ToDoItem("Mails durchsehen und beantworten", new DateTime(2024, 09, 11), categories.ElementAt(0)))
-                    .AddToDoItem(new ToDoItem("Wöchentlichen Einkaufszettel erstellen", new DateTime(2024, 09, 08), categories.ElementAt(0)))
-                    .AddToDoItem(new ToDoItem("30 Minuten Sport oder Yoga machen", new DateTime(2024, 09, 03), categories.ElementAt(0)))
-                    .AddToDoItem(new ToDoItem("Arbeitsprojekte aktualisieren oder überprüfen", new DateTime(2024, 08, 28), categories.ElementAt(1)))
-                    .AddToDoItem(new ToDoItem("15 Minuten Meditieren oder Achtsamkeitsübung", new DateTime(2024, 08, 22), categories.ElementAt(1))),
+                    .AddToDoItem(new ToDoItem("Mails durchsehen und beantworten", new DateTime(2024, 09, 11)) 
+                        { CategoryNavigation = categories.ElementAt(0) })
+                    .AddToDoItem(new ToDoItem("Wöchentlichen Einkaufszettel erstellen", new DateTime(2024, 09, 08)) 
+                        { CategoryNavigation = categories.ElementAt(0) })
+                    .AddToDoItem(new ToDoItem("30 Minuten Sport oder Yoga machen", new DateTime(2024, 09, 03)) 
+                        { CategoryNavigation = categories.ElementAt(0) })
+                    .AddToDoItem(new ToDoItem("Arbeitsprojekte aktualisieren oder überprüfen", new DateTime(2024, 08, 28)) 
+                        { CategoryNavigation = categories.ElementAt(1) })
+                    .AddToDoItem(new ToDoItem("15 Minuten Meditieren oder Achtsamkeitsübung", new DateTime(2024, 08, 22)) 
+                        { CategoryNavigation = categories.ElementAt(1) }),
                 new User(
                     "Anna",
                     "Theke",
                     "anna-theke@gmail.com"
                 )
-                    .AddToDoItem(new ToDoItem("Termine für nächste Woche planen", new DateTime(2024, 08, 21), categories.ElementAt(1))),
+                    .AddToDoItem(new ToDoItem("Termine für nächste Woche planen", new DateTime(2024, 08, 21)) 
+                        { CategoryNavigation = categories.ElementAt(1) }),
                 new User(
                     "Axel",
                     "Schweiß",
                     "schweiß_axel@gmail.com"
                 )
-                    .AddToDoItem(new ToDoItem("Zimmer aufräumen und durchlüften", new DateTime(2024, 08, 19), categories.ElementAt(2))),
+                    .AddToDoItem(new ToDoItem("Zimmer aufräumen und durchlüften", new DateTime(2024, 08, 19)) 
+                        { CategoryNavigation = categories.ElementAt(2) }),
                 new User(
                     "Toni",
                     "Fit",
                     "hans@reinsch@gmx.at"
                 )
-                    .AddToDoItem(new ToDoItem("Wasserflasche auffüllen und hydratisiert bleiben", new DateTime(2024, 06, 26), categories.ElementAt(2))),
+                    .AddToDoItem(new ToDoItem("Wasserflasche auffüllen und hydratisiert bleiben", new DateTime(2024, 06, 26)) 
+                        { CategoryNavigation = categories.ElementAt(2) }),
                 new User(
                     "Anna",
                     "Nass",
                     "annnass@gmail.com"
                 )
-                    .AddToDoItem(new ToDoItem("Kurz mit einem Freund oder Familienmitglied telefonieren", new DateTime(2024, 06, 02), categories.ElementAt(2)))
-                    .AddToDoItem(new ToDoItem("Etwas Neues lernen (ein Artikel oder Video)", new DateTime(2024, 05, 19), categories.ElementAt(3)))
-                    .AddToDoItem(new ToDoItem("5 Minuten lang Dehnübungen machen", new DateTime(2024, 05, 12), categories.ElementAt(3)))
-                    .AddToDoItem(new ToDoItem("Eine To-Do-Liste für den nächsten Tag erstellen1", new DateTime(2024, 05, 05), categories.ElementAt(3)))
-                    .AddToDoItem(new ToDoItem("Eine To-Do-Liste für den nächsten Tag erstellen2", new DateTime(2024, 05, 02), categories.ElementAt(3)))
-                    .AddToDoItem(new ToDoItem("Eine To-Do-Liste für den nächsten Tag erstellen3", new DateTime(2024, 04, 18), categories.ElementAt(3))),
+                    .AddToDoItem(new ToDoItem("Kurz mit einem Freund oder Familienmitglied telefonieren", new DateTime(2024, 06, 02)) 
+                        { CategoryNavigation = categories.ElementAt(2) })
+                    .AddToDoItem(new ToDoItem("Etwas Neues lernen (ein Artikel oder Video)", new DateTime(2024, 05, 19)) 
+                        { CategoryNavigation = categories.ElementAt(3) })
+                    .AddToDoItem(new ToDoItem("5 Minuten lang Dehnübungen machen", new DateTime(2024, 05, 12)) 
+                        { CategoryNavigation = categories.ElementAt(3) })
+                    .AddToDoItem(new ToDoItem("Eine To-Do-Liste für den nächsten Tag erstellen1", new DateTime(2024, 05, 05)) 
+                        { CategoryNavigation = categories.ElementAt(3) })
+                    .AddToDoItem(new ToDoItem("Eine To-Do-Liste für den nächsten Tag erstellen2", new DateTime(2024, 05, 02)) 
+                        { CategoryNavigation = categories.ElementAt(3) })
+                    .AddToDoItem(new ToDoItem("Eine To-Do-Liste für den nächsten Tag erstellen3", new DateTime(2024, 04, 18)) 
+                        { CategoryNavigation = categories.ElementAt(3) }),
                 new User(
                     "Max",
                     "Dünnsch",
@@ -109,25 +123,6 @@ namespace Spg.SpengerDo.App.Tests.Helpers
                 new Category("Aufräumen"),
                 new Category("Autopflege"),
                 new Category("Job"),
-            };
-        }
-
-        public static List<ToDoItem> GetSeedingToDoItems()
-        {
-            return new List<ToDoItem>()
-            {
-                new ToDoItem("", new DateTime(2024, 09, 11)),
-                new ToDoItem("", new DateTime(2024, 09, 08)),
-                new ToDoItem("", new DateTime(2024, 09, 03)),
-                new ToDoItem("", new DateTime(2024, 08, 28)),
-                new ToDoItem("", new DateTime(2024, 08, 22)),
-                new ToDoItem("", new DateTime(2024, 08, 21)),
-                new ToDoItem("", new DateTime(2024, 08, 19)),
-                new ToDoItem("", new DateTime(2024, 06, 26)),
-                new ToDoItem("", new DateTime(2024, 06, 02)),
-                new ToDoItem("", new DateTime(2024, 05, 19)),
-                new ToDoItem("", new DateTime(2024, 05, 12)),
-                new ToDoItem("", new DateTime(2024, 05, 05)),
             };
         }
     }

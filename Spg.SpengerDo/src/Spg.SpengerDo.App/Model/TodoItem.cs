@@ -6,8 +6,8 @@
         public string Description { get; set; } = string.Empty;
         public DateTime CreationDateTime { get; set; }
 
-        public Category CategoryNavigation { get; private set; } = default!;
-        public User UserNavigation { get; private set; } = default!;
+        public Category CategoryNavigation { get; set; } = default!;
+        public User UserNavigation { get; set; } = default!;
 
         protected ToDoItem()
         { }
@@ -15,19 +15,6 @@
         {
             Description = description;
             CreationDateTime = creationDateTime;
-        }
-        public ToDoItem(string description, DateTime creationDateTime, Category categoryNavigation)
-        {
-            Description = description;
-            CreationDateTime = creationDateTime;
-            CategoryNavigation = categoryNavigation;
-        }
-        public ToDoItem(string description, DateTime creationDateTime, Category categoryNavigation, User userNavigation)
-        {
-            Description = description;
-            CreationDateTime = creationDateTime;
-            CategoryNavigation = categoryNavigation;
-            UserNavigation = userNavigation;
         }
     }
 }

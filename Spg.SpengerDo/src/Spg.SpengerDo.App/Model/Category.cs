@@ -16,6 +16,7 @@
 
         public Category AddToDoItem(ToDoItem toDoItem)
         {
+            toDoItem.CategoryNavigation = this;
             ToDoItems.Add(toDoItem);
             return this;
         }

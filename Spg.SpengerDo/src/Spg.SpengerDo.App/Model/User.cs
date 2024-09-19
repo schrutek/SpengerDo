@@ -20,6 +20,7 @@
 
         public User AddToDoItem(ToDoItem toDoItem)
         {
+            toDoItem.UserNavigation = this;
             ToDoItems.Add(toDoItem);
             return this;
         }

@@ -55,7 +55,11 @@ namespace Spg.SpengerDo.App.ToDo.Business
             // * ...
 
             // Act
-            ToDoItem newTodoItem = new ToDoItem(newTodo.Description, DateTime.Now, existingCategory, existingUser);
+            ToDoItem newTodoItem = new ToDoItem(newTodo.Description, DateTime.Now)
+            {
+                CategoryNavigation = existingCategory,
+                UserNavigation = existingUser,
+            };
             // Save
             _todoRepository.Create(newTodoItem);
         }
