@@ -1,0 +1,39 @@
+﻿@using Spg.SpengerDo.App.Model;
+@model TodoViewModel
+
+<h1>TODOs</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<hr />
+<form method="get">
+    <input asp-for="UserId" type="hidden" />
+    <div class="form-group">
+        <label asp-for="CategoryId" class="control-label">Category</label>
+        <select asp-for="CategoryId" asp-items="ViewBag.Categories"></select>
+        <button class="btn btn-primary" type="submit">Filter</button>
+    </div>
+</form>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var todoItem in Model.Todos)
+        {
+            <tr>
+                <td>@todoItem.Description</td>
+                <td>@todoItem.CategoryNavigation.Name</td>
+                <td>@todoItem.CreationDateTime</td>
+            </tr>
+        }
+    </tbody>
+</table>
