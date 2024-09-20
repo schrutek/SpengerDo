@@ -11,9 +11,9 @@ namespace Spg.SpengerDo.App.ToDo.Persistance
 {
     public class CategoryRepository : ICategoryRepository
     {
-        private readonly SpengerDoDatabase _db;
+        private readonly SpengerDoDBService _db;
 
-        public CategoryRepository(SpengerDoDatabase db)
+        public CategoryRepository(SpengerDoDBService db)
         {
             _db = db;
         }

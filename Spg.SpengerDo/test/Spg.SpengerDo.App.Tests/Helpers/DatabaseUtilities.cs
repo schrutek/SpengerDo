@@ -7,19 +7,19 @@ namespace Spg.SpengerDo.App.Tests.Helpers
 {
     public static class DatabaseUtilities
     {
-        public static SpengerDoDatabase CreateDb()
+        public static SpengerDoDBService CreateDb()
         {
             DbContextOptions options = new DbContextOptionsBuilder()
                 .UseSqlite("Data Source = .\\..\\..\\..\\..\\..\\SpengerDo.db")
                 .Options;
 
-            SpengerDoDatabase db = new SpengerDoDatabase(options);
+            SpengerDoDBService db = new SpengerDoDBService(options);
             db.Database.EnsureDeleted();
             db.Database.EnsureCreated();
             return db;
         }
 
-        public static SpengerDoDatabase CreateMemoryDb()
+        public static SpengerDoDBService CreateMemoryDb()
         {
             SqliteConnection connection = new SqliteConnection("Data Source=:memory:");
             connection.Open();
@@ -28,13 +28,13 @@ namespace Spg.SpengerDo.App.Tests.Helpers
                 .UseSqlite(connection)
                 .Options;
 
-            SpengerDoDatabase db = new SpengerDoDatabase(options);
+            SpengerDoDBService db = new SpengerDoDBService(options);
             db.Database.EnsureDeleted();
             db.Database.EnsureCreated();
             return db;
         }
 
-        public static void SeedDatabase(SpengerDoDatabase db)
+        public static void SeedDatabase(SpengerDoDBService db)
         {
             List<Category> categories = GetSeedingCategories();
             db.Categories.AddRange(categories);

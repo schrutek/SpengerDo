@@ -8,7 +8,7 @@ namespace Spg.SpengerDo.App.Tests
         [Fact]
         public void Should_CreateAndSeedDatabase()
         {
-            using (SpengerDoDatabase db = DatabaseUtilities.CreateDb())
+            using (SpengerDoDBService db = DatabaseUtilities.CreateDb())
             {
                 // Arrange
                 DatabaseUtilities.SeedDatabase(db);

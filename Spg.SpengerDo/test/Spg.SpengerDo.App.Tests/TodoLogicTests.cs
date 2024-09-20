@@ -11,7 +11,7 @@ namespace Spg.SpengerDo.App.Tests
         [Fact]
         public void Should_CreateTodo_Success()
         {
-            using (SpengerDoDatabase db = DatabaseUtilities.CreateMemoryDb())
+            using (SpengerDoDBService db = DatabaseUtilities.CreateMemoryDb())
             {
                 // Arrange
                 DatabaseUtilities.SeedDatabase(db);
@@ -31,7 +31,7 @@ namespace Spg.SpengerDo.App.Tests
         [Fact]
         public void Should_ThrowError_WhenCategoryNotFound()
         {
-            using (SpengerDoDatabase db = DatabaseUtilities.CreateMemoryDb())
+            using (SpengerDoDBService db = DatabaseUtilities.CreateMemoryDb())
             {
                 // Arrange
                 DatabaseUtilities.SeedDatabase(db);
@@ -50,7 +50,7 @@ namespace Spg.SpengerDo.App.Tests
         [Fact]
         public void Should_ThrowError_WhenUserNotFound()
         {
-            using (SpengerDoDatabase db = DatabaseUtilities.CreateMemoryDb())
+            using (SpengerDoDBService db = DatabaseUtilities.CreateMemoryDb())
             {
                 // Arrange
                 DatabaseUtilities.SeedDatabase(db);
@@ -69,7 +69,7 @@ namespace Spg.SpengerDo.App.Tests
         [Fact]
         public void Should_ThrowError_WhenMoreThanFiveTodos()
         {
-            using (SpengerDoDatabase db = DatabaseUtilities.CreateMemoryDb())
+            using (SpengerDoDBService db = DatabaseUtilities.CreateMemoryDb())
             {
                 // Arrange
                 DatabaseUtilities.SeedDatabase(db);

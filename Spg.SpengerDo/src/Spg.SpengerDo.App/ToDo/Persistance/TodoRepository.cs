@@ -7,9 +7,9 @@ namespace Spg.SpengerDo.App.ToDo.Persistance
 {
     public class TodoRepository : ITodoRepository
     {
-        private readonly SpengerDoDatabase _db;
+        private readonly SpengerDoDBService _db;
 
-        public TodoRepository(SpengerDoDatabase db)
+        public TodoRepository(SpengerDoDBService db)
         {
             _db = db;
         }

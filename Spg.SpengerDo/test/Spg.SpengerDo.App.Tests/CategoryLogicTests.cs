@@ -16,7 +16,7 @@ namespace Spg.SpengerDo.App.Tests
         [Fact]
         public void Should_CreateCategory_Success()
         {
-            using (SpengerDoDatabase db = DatabaseUtilities.CreateMemoryDb())
+            using (SpengerDoDBService db = DatabaseUtilities.CreateMemoryDb())
             {
                 // Arrange
                 DatabaseUtilities.SeedDatabase(db);

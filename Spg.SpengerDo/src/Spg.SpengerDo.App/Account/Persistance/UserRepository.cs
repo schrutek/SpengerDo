@@ -6,9 +6,9 @@ namespace Spg.SpengerDo.App.Account.Persistance
 {
     public class UserRepository : IUserRepository
     {
-        private readonly SpengerDoDatabase _db;
+        private readonly SpengerDoDBService _db;
 
-        public UserRepository(SpengerDoDatabase db)
+        public UserRepository(SpengerDoDBService db)
         {
             _db = db;
         }

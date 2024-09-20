@@ -13,7 +13,7 @@ builder.Services.AddControllersWithViews();
 //
 // Configure DB Context
 string? connectionString = builder.Configuration.GetConnectionString("SqLite");
-builder.Services.AddDbContext<SpengerDoDatabase>(o => o.UseSqlite(connectionString));
+builder.Services.AddDbContext<SpengerDoDBService>(o => o.UseSqlite(connectionString));
 //
 // Configure Services and Repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();
